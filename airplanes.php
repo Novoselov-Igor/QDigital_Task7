@@ -13,19 +13,19 @@ abstract class Airplanes
         $this->maxSpeed = $maxSpeed;
     }
 
-    public function takeOff()
+    public function takeOff(): string
     {
         $this->isFlying = true;
         return "{$this->name} взлетел";
     }
 
-    public function land()
+    public function land(): string
     {
         $this->isFlying = false;
         return "{$this->name} приземлился";
     }
 
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->isFlying ? "В воздухе" : "На земле";
     }
@@ -34,13 +34,13 @@ abstract class Airplanes
 // Класс для самолетов типа МИГ
 class MigAirplane extends Airplanes
 {
-    public function attack()
+    public function attack(): string
     {
         return "{$this->name} выполняет атаку!\n";
     }
 }
 
 // Класс для самолетов типа ТУ-154
-class Tu154Aircraft extends Airplanes
+class Tu154Airplane extends Airplanes
 {
 }
